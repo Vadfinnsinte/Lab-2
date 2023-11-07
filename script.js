@@ -1,5 +1,6 @@
 import { books } from './book-list.js'
 // Fråga 1.
+console.log ('Hur många böcker finns det i affären?')
 console.log(books.length)
 /*2 Skriv ut namnen på alla böcker. (Skapa först en lista som bara innehåller namnen.)
 */
