@@ -12,7 +12,7 @@ console.log(titles);
 /* 3 Skriv ut namn och pris för alla böcker av typen "Fantasy".*/
 
 for (let i=0; i < books.length; i++){
-	if ( i === "genre" && "genre" === "fantasy")
-	console.log(books.price)
-}
+	if ( books[i].genre.includes("Fantasy"))
+	console.log(books[i].title, books[i].price)
+} 
   
