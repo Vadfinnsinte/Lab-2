@@ -53,3 +53,28 @@ titles.sort(function(a, b) {
   });
   
   console.log(titles);
+
+
+
+  /*
+14 Skriv färdigt funktionen, som ska kunna lägga till en ny bok sist i listan.*/
+
+function addBook(list, title, author, genre, price) {
+    const newBook = {
+      id: list.length + 1,
+      title: title,
+      author: author,
+      genre: genre,
+      price: price
+    };
+  
+    list.push(newBook); 
+    return list; 
+  }
+
+  addBook(books, "New Book", "Author Name", "Fiction", 14.99);
+  console.log(books)
+  
+  
+
+
