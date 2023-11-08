@@ -79,11 +79,11 @@ let dubblett =[]
 for (let i=0; i < titles.length; i++){
 	let x = titles[i] 
 	if( titles.slice(i + 1).some(x => x === titles[i])) {
-		dubblett.push("Det finns en dublett av: ", x)
+		dubblett.push(x)
 	}
 
 }
-console.log(dubblett);
+console.log("Det finns en dublett av: ", dubblett);
 
 // 10 Vilka författare har ett namn som består av mer än 2 ord? Ta inte med författare som har punkter i sina namn.
 
@@ -95,7 +95,16 @@ for(let i=0; i < authors.length; i++){
 	if(mellanA.length > 2 && !mellanA.some(word => word.includes(".") )){
 	flerA.push(authors[i])}
 }
-console.log(flerA);
+console.log(flerA, "har mer än två mellanslag i sig ");
 
 
 // 11 Skriv ut namnen på alla författare i bokstavsordning. Sortera efter författarens efternamn.
+
+let lastname = []
+for (let i=0; i < authors.length; i++){
+	let mellanA = authors[i].split(" ")
+	let lastnames = mellanA.slice(1, authors.length)
+	// lastname = lastname.concat(lastnames)
+	lastname.push(lastnames)
+}
+console.log(lastname)
