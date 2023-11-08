@@ -35,3 +35,11 @@ for (let i = 0; i < books.length; i++) {
 console.log( )
 
 
+/*12 Skriv ut namnen på alla böcker vars titel inte börjar med "The".
+*/
+console.log('Följande böcker börjar inte med "The"' )
+let filerTitle = titles.filter(function(element) {
+    return !element.startsWith("The");
+  });
+  
+  console.log(filerTitle);
