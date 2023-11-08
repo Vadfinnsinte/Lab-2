@@ -38,3 +38,34 @@ pris.forEach(number => {
 })
 let prisavrund = enpris.toFixed(2)
 console.log("Totala summan för alla våra böcker(avrundat till två decimaler): ", Number(prisavrund));
+
+// 7 Vilka böcker är sammanlagt värda mest, dystopian eller mystery?
+let dystopian = []
+let mystery = []
+for (let i=0; i < books.length; i++){
+	if ( books[i].genre.includes("Dystopian")){
+		dystopian = books.map(book => book.price);
+	}
+	else if ( books[i].genre.includes("Mystery")){
+		mystery = books.map(book => book.price);
+	}
+}
+let prisdystopian = 0
+let prismystery = 0
+
+dystopian.forEach(number => {	
+	prisdystopian += number
+})
+
+mystery.forEach(number => {	
+	prismystery += number
+})
+function compare() {
+	if (prismystery > prisdystopian) {
+	console.log("Mystery kategorian är värd mer än dystopian");
+	}
+	else {
+	console.log("Dystopian kategorian är värd mer än Mystery");
+	}
+}
+compare()
