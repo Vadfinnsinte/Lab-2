@@ -27,7 +27,7 @@ for (let i=0; i < books.length; i++){
 } 
 // 6 Hur mycket är hela bokinnehavet värt? (Vad är det totala priset, om man skulle sälja alla böcker?)
 
-let pris = books.map(book => book.price)
+let pris = books.map(price => price.price)
 let enpris = 0 
 // for (let i=0; i < pris.length; i++) {
 // 	enpris += pris[i]
@@ -84,3 +84,18 @@ for (let i=0; i < titles.length; i++){
 
 }
 console.log(dubblett);
+
+// 10 Vilka författare har ett namn som består av mer än 2 ord? Ta inte med författare som har punkter i sina namn.
+
+let authors = books.map(author => author.author)
+let flerA = []
+
+for(let i=0; i < authors.length; i++){
+	let mellanA = authors[i].split(" ")
+	if(mellanA.length > 2 && !mellanA.some(word => word.includes(".") )){
+	flerA.push(authors[i])}
+}
+console.log(flerA);
+
+
+// 11 Skriv ut namnen på alla författare i bokstavsordning. Sortera efter författarens efternamn.
