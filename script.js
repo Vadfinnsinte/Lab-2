@@ -69,3 +69,18 @@ function compare() {
 	}
 }
 compare()
+
+// 8 Skriv ut namnen på alla böcker i bokstavsordning.
+console.log("Böckernas titlar i bokstasordning: ")
+console.log(titles.sort())
+
+// 9 Vilken bok finns det en dubblett av? 
+let dubblett =[]
+for (let i=0; i < titles.length; i++){
+	let x = titles[i] 
+	if( titles.slice(i + 1).some(x => x === titles[i])) {
+		dubblett.push("Det finns en dublett av: ", x)
+	}
+
+}
+console.log(dubblett);
