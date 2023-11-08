@@ -43,3 +43,13 @@ let filerTitle = titles.filter(function(element) {
   });
   
   console.log(filerTitle);
+
+
+
+/*13 Skriv ut böckernas titel, sorterat efter titelns längd, i stigande ordning.*/
+console.log('Böckernas titel, sorterat efter titelns längd, i stigande ordning.' )
+titles.sort(function(a, b) {
+    return a.length - b.length;
+  });
+  
+  console.log(titles);
