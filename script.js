@@ -121,15 +121,37 @@ console.log ( )
 
 // 11 Skriv ut namnen på alla författare i bokstavsordning. Sortera efter författarens efternamn.
 console.log ('Fråga 11.')
-let lastname = []
-for (let i=0; i < authors.length; i++){
-	let mellanA = authors[i].split(" ")
-	let lastnames = mellanA.slice(1, authors.length)
-	// lastname = lastname.concat(lastnames)
-	lastname.push(lastnames)
+
+// let lastname = []
+
+// for (let i=0; i < authors.length; i++){
+// 	let mellanA = authors[i].split(" ")
+// 	let lastnames = mellanA.slice(-1)
+// 	lastname = lastname.concat(lastnames)
+// }
+// console.log(lastname.sort())
+
+// coden nedaför(till fråga 12) är tagen från AI utan ändringar från oss, Vi la in den då vi förstår och har denna kommentaren för att vara ärliga i att vi ej pillat på den själva.
+function sortAuthorsByLastName(a, b) {
+    const lastNameA = a.author.split(' ')[1]; 
+    const lastNameB = b.author.split(' ')[1]; 
+
+  
+    if (lastNameA < lastNameB) {
+        return -1;
+    }
+    if (lastNameA > lastNameB) {
+        return 1;
+    }
+    return 0;
 }
-console.log(lastname)
-console.log ( )
+
+const sortedBooks = books.sort(sortAuthorsByLastName);
+
+sortedBooks.forEach(book => {
+    const authorName = book.author;
+    console.log(authorName);
+});
 
 
 /*12 Skriv ut namnen på alla böcker vars titel inte börjar med "The".*/
