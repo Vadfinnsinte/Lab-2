@@ -178,23 +178,26 @@ titles.sort(function(a, b) {
 
 /*14 Skriv färdigt funktionen, som ska kunna lägga till en ny bok sist i listan.*/
 console.log ('Fråga 14.')
+
 function addBook(list, title, author, genre, price) {
 
-	/*Hittar det högsta befintliga ID:et i listan då id: 13 inte finns så kan vi inte använda 'id: list.length + 1,' då skulle nästa bok få id 25.*/
-	const maxId = Math.max(...list.map(book => book.id), 0);
-	
-	const newBook = {
-	  id: maxId + 1,
-	  title: title,
-	  author: author,
-	  genre: genre,
-	  price: price
-	};
+  /*Hittar det högsta befintliga ID:et i listan då id: 13 inte finns så kan vi inte använda 'id: list.length + 1,' då skulle nästa bok få id 25.*/
+  const maxId = Math.max(...list.map(book => book.id), 0);
   
-	list.push(newBook);
-	return list;
+  const newBook = {
+    id: maxId + 1,
+    title,
+    author,
+    genre,
+    price,
+  };
+
+  list.push(newBook);
+
+  list.sort((a, b) => a.id - b.id);
+
+  return list;
   }
   
   addBook(books, "New Book", "Author Name", "Genre", 9.99);
   console.log(books);
-  
